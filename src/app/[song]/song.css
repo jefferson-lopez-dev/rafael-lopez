@@ -1,0 +1,24 @@
+@keyframes background-fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.background-animate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: 1;
+  z-index: -1;
+  animation: background-fade 3s ease-in-out infinite;
+}
