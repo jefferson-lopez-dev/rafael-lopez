@@ -1,7 +1,10 @@
+"use client";
+
 import clsx from "clsx";
 import { Song } from "@/data";
 import { ListMusic, Pause, Play, Share2, SkipForward } from "lucide-react";
-import { shareSong } from "../utils";
+import { shareSong, nextSong, previousSong } from "../utils";
+import Link from "next/link";
 
 interface Props {
   togglePlayPause: () => void;
@@ -48,13 +51,9 @@ export function Controllers(props: Props) {
         <div className="flex justify-between items-center">
           <ListMusic className="stroke-1 cursor-pointer" />
           <div className="flex items-center gap-5">
-            <a>
-              <SkipForward
-                className={clsx("fill-white rotate-180", {
-                  // "opacity-50 cursor-not-allowed": position === 0,
-                })}
-              />
-            </a>
+            <Link href={`${previousSong(song)}`}>
+              <SkipForward className={clsx("fill-white rotate-180")} />
+            </Link>
             <div
               onClick={togglePlayPause}
               className="w-14 cursor-pointer flex items-center justify-center h-14 rounded-full border bg-white"
@@ -65,13 +64,9 @@ export function Controllers(props: Props) {
                 <Play className="fill-black text-black w-8 h-8" />
               )}
             </div>
-            <a href={"nextSong()"}>
-              <SkipForward
-                className={clsx("fill-white cursor-pointer", {
-                  // "opacity-50 cursor-not-allowed": songs.length === position + 1,
-                })}
-              />
-            </a>
+            <Link href={`${nextSong(song)}`}>
+              <SkipForward className={clsx("fill-white cursor-pointer")} />
+            </Link>
           </div>
           <Share2
             onClick={async () => {
