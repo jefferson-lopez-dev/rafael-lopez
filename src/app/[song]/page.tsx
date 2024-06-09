@@ -1,4 +1,4 @@
-import { Songs } from "@/data"; // Importar Songs en lugar de Song
+import { Song, Songs } from "@/data"; // Importar Songs en lugar de Song
 import { Player } from "./player";
 import { NoSong } from "./no-song";
 import type { Metadata } from "next";
@@ -7,7 +7,7 @@ interface Props {
   params: { song: string };
 }
 
-function findSongBySlug(slug: string) {
+function findSongBySlug(slug: string): Song | undefined {
   return Songs.find((song) => song.slug === slug);
 }
 
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function SongReproducer(props: Props) {
   const { params } = props;
-  const songData = findSongBySlug(params.song);
-
+  const decodedSlug = decodeURIComponent(params.song); // Decodificar el slug si es necesario
+  const songData = findSongBySlug(decodedSlug);
   return songData ? <Player {...songData} /> : <NoSong />;
 }
