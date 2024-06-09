@@ -69,6 +69,7 @@ export function Player(song: Song) {
           <div className="w-full flex flex-col gap-5 px-5 pb-5">
             <Lyrics lyric={currentLyrics} />
             <Singer />
+            <SocialNetworks />
           </div>
         </div>
       </div>
