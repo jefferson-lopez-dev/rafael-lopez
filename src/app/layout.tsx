@@ -17,7 +17,9 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
       </head>
-      <body className={`${GeistSans.className} bg-[url('/bg-ruido.png')]`}>
+      <body
+        className={`${GeistSans.className} bg-[url('/bg-ruido.png')] select-none`}
+      >
         {children}
       </body>
     </html>
