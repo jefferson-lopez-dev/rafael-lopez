@@ -47,7 +47,7 @@ export function Player(song: Song) {
           )}
         >
           <div className="flex flex-col max-w-[500px] px-5 pt-5 items-center gap-24 w-full">
-            <Header />
+            <Header song={song} />
             <Cover
               togglePlayPause={() => {}}
               imagen={song.cover}
@@ -55,6 +55,7 @@ export function Player(song: Song) {
               isPlay={isPlay}
             />
             <Controllers
+              song={song}
               togglePlayPause={togglePlayPause}
               title={song.title}
               currentTime={currentTime}
