@@ -1,18 +1,50 @@
-import { Songs } from "@/data";
+import { Songs } from "@/data"; // Importar Songs en lugar de Song
 import { Player } from "./player";
 import { NoSong } from "./no-song";
+import type { Metadata } from "next";
 
 interface Props {
   params: { song: string };
 }
 
-function Song(slug: string) {
+function findSongBySlug(slug: string) {
   return Songs.find((song) => song.slug === slug);
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const song = Songs.find((song) => song.slug === params.song);
+
+  return {
+    title: song?.title || "Cancion no encontrada",
+    description: song?.description || "Esta cancion no ha sido encontrada",
+    publisher: "Jefferson Lopez",
+    category: "Musica",
+    creator: "Jefferson",
+    twitter: {
+      card: "player",
+      images: {
+        url: song?.cover!,
+        width: 1200,
+        height: 630,
+        alt: song?.title,
+      },
+    },
+    openGraph: {
+      siteName: "Rafael Lopez - Canciones",
+      type: "website",
+      images: {
+        url: song?.cover!,
+        width: 1200,
+        height: 630,
+        alt: song?.title,
+      },
+    },
+  };
 }
 
 export default function SongReproducer(props: Props) {
   const { params } = props;
-  const songData = Song(params.song);
+  const songData = findSongBySlug(params.song);
 
   return songData ? <Player {...songData} /> : <NoSong />;
 }
