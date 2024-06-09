@@ -20,5 +20,5 @@
   background: inherit;
   opacity: 1;
   z-index: -1;
-  animation: background-fade 3s ease-in-out infinite;
+  animation: background-fade 5s ease-in-out infinite;
 }
