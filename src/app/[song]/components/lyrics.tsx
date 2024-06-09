@@ -4,7 +4,7 @@ export function Lyrics({ lyric }: { lyric: string }) {
       <span className="absolute top-3 text-sm font-bold left-4 text-yellow-500 ">
         Letra
       </span>
-      <p className="text-4xl text-center font-bold">{lyric}</p>
+      <p className="text-4xl px-10 text-center font-bold">{lyric}</p>
     </div>
   );
 }
