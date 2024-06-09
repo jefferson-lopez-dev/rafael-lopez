@@ -1,5 +1,7 @@
 import clsx from "clsx";
+import { Song } from "@/data";
 import { ListMusic, Pause, Play, Share2, SkipForward } from "lucide-react";
+import { shareSong } from "../utils";
 
 interface Props {
   togglePlayPause: () => void;
@@ -8,11 +10,19 @@ interface Props {
   duration: string;
   isPlay: boolean;
   title: string;
+  song: Song;
 }
 
 export function Controllers(props: Props) {
-  const { currentTime, duration, isPlay, progress, title, togglePlayPause } =
-    props;
+  const {
+    currentTime,
+    duration,
+    isPlay,
+    progress,
+    title,
+    song,
+    togglePlayPause,
+  } = props;
 
   return (
     <div className="w-full flex flex-col gap-3">
@@ -63,7 +73,12 @@ export function Controllers(props: Props) {
               />
             </a>
           </div>
-          <Share2 className="stroke-1 cursor-pointer" />
+          <Share2
+            onClick={async () => {
+              await shareSong(song);
+            }}
+            className="stroke-1 cursor-pointer"
+          />
         </div>
       </div>
     </div>
