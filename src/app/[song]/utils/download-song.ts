@@ -1,6 +1,7 @@
 import { Song } from "@/data";
 import { saveAs } from "file-saver";
 import { ID3Writer } from "browser-id3-writer";
+import { Songs } from "@/data";
 
 export const downloadSong = async (song: Song) => {
   try {
@@ -17,6 +18,8 @@ export const downloadSong = async (song: Song) => {
       lyrics = extractLyricsFromLRC(lrcText);
     }
 
+    const TRCK = Songs.findIndex((sg) => sg.slug === song.slug);
+
     const uint8Array = new Uint8Array(arrayBuffer);
 
     const writer = new ID3Writer(uint8Array);
@@ -27,7 +30,8 @@ export const downloadSong = async (song: Song) => {
       .setFrame("TALB", "Joropo Llano y Leyenda") // Album
       // @ts-ignore
       .setFrame("TYER", "2020") // Year
-      .setFrame("TRCK", "12") // Track number
+      // @ts-ignore
+      .setFrame("TRCK", TRCK + 1) // Track number
       .setFrame("TCON", ["Llanera"]) // Genre
       .setFrame("COMM", {
         description: "Comment",
