@@ -38,15 +38,15 @@ export function Player(song: Song) {
       <div className="flex flex-col gap-10 items-center">
         <div
           className={clsx(
-            `rounded-md bg-gradient-to-b w-full flex justify-center from-transparent via-yellow-800/35 to-transparent`,
+            `rounded-md bg-gradient-to-b w-full h-[88dvh] flex justify-center from-transparent via-yellow-800/35 to-transparent`,
             {
               "via-yellow-900/50": !isPlay,
-              "via-yellow-800/35": isPlay,
+              "via-yellow-900/35": isPlay,
               "background-animate": isPlay,
             }
           )}
         >
-          <div className="flex flex-col max-w-[500px] px-5 pt-5 items-center gap-24 w-full">
+          <div className="flex flex-col max-w-[500px] h-full justify-between px-5 pt-5 items-center gap-24 w-full">
             <Header song={song} />
             <Cover
               togglePlayPause={() => {}}
