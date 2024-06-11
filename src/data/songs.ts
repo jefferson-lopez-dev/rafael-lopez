@@ -25,7 +25,7 @@ class Song {
     this.album = album;
     this.title = title;
     this.cover = cover;
-    this.description = description;
+    this.description = description || "La descripcion aun no esta disponible";
     this.time = time;
     this.author = author;
     this.slug = slug(this.title);
@@ -40,107 +40,95 @@ const SongsData: SongType[] = [
     description:
       "Una súplica de amor y perdón, entre despecho y chismes, donde el frío de la ausencia amenaza con destruir el hogar.",
     time: "4:07",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Si un dia llegara a viejo",
-    description: "Description, no disponible",
+    description: null,
     time: "3:51",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "La celosa",
-    description: "Description, no disponible",
+    description: null,
     time: "4:09",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Un trago para un despecho",
-    description: "Description, no disponible",
+    description: null,
     time: "3:58",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Los recuerdos de aquel sitio",
-    description: "Description, no disponible",
+    description: null,
     time: "4:13",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Otro ramalazo",
-    description: "Description, no disponible",
+    description: null,
     time: "2:48",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Ilusion pasajera",
-    description: "Description, no disponible",
+    description: null,
     time: "3:51",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Fragmentos de un amor",
-    description: "Description, no disponible",
+    description: null,
     time: "4:34",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Carlina",
-    description: "Description, no disponible",
+    description: null,
     time: "3:49",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "Este es mi llano",
-    description: "Description, no disponible",
+    description: null,
     time: "3:36",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "De aquel amor",
-    description: "Description, no disponible",
+    description: null,
     time: "4:28",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
   {
     title: "A mi llano con cariño",
-    description: "Description, no disponible",
+    description: null,
     time: "3:41",
-    cover:
-      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
+    cover: "/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
