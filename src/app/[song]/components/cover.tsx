@@ -15,7 +15,7 @@ interface Props {
 export function Cover({ togglePlayPause, isPlay, slug, imagen }: Props) {
   return (
     <div
-      className={`pt-3 py-10 pb-1 h-[200px] sm:h-[250px] justify-center flex flex-col gap-2 px-1`}
+      className={`pt-3 py-10 pb-1 h-[200px] justify-center flex flex-col gap-2 px-1`}
     >
       <motion.div
         onClick={togglePlayPause}
