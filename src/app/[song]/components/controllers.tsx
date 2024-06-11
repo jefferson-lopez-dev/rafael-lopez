@@ -5,6 +5,8 @@ import { Song } from "@/data";
 import { ListMusic, Pause, Play, Share2, SkipForward } from "lucide-react";
 import { shareSong, nextSong, previousSong } from "../utils";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface Props {
   togglePlayPause: () => void;
@@ -26,6 +28,14 @@ export function Controllers(props: Props) {
     song,
     togglePlayPause,
   } = props;
+  const { push } = useRouter();
+
+  useEffect(() => {
+    if (progress >= 100) {
+      push(nextSong(song));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [progress]);
 
   return (
     <div className="w-full flex flex-col gap-3">
