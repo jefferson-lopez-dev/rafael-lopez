@@ -19,7 +19,8 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-native-fs": "^2.20.0"
+    "react-native-fs": "^2.20.0",
+    "slug": "^9.1.0"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
@@ -27,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/slug": "^5.0.8",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

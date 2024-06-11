@@ -1,2 +1,2 @@
-export * from './get-audio-cloudinary';
-export * from './get-lrc-cloudinary';
+export * from "./get-audio";
+export * from "./get-lrc";
