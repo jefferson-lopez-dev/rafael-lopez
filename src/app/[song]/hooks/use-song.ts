@@ -29,6 +29,12 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
   };
 
   useEffect(() => {
+    if (refAudio.current) {
+      refAudio.current.play();
+    }
+  }, [refAudio]);
+
+  useEffect(() => {
     if (lrcUrl) {
       fetch(lrcUrl)
         .then((response) => response.text())
