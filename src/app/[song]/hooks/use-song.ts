@@ -36,13 +36,7 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
 
   useEffect(() => {
     if (lrcUrl) {
-      fetch(lrcUrl)
-        .then((response) => response.text())
-        .then((data) => {
-          setLyrics(parseLRC(data));
-        })
-        .catch((error) => console.error("Error loading LRC file:", error));
-    } else {
+      setLyrics(parseLRC(lrcUrl));
     }
   }, [lrcUrl]);
 
