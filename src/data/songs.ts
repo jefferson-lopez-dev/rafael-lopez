@@ -1,4 +1,3 @@
-import { getAudio, getLrc } from "@/utils";
 import { Song } from "./type";
 
 export const Songs: Song[] = [
@@ -10,8 +9,8 @@ export const Songs: Song[] = [
     slug: "patrona-siempre-es-patrona",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    audio: getAudio("patrona-siempre-es-patrona"),
-    lrc: getLrc("patrona-siempre-es-patrona"),
+    audio: "/music/patrona-siempre-es-patrona.mp3",
+    lrc: "/lrc/patrona-siempre-es-patrona.lrc",
   },
   {
     title: "Si un dia llegara a viejo",
