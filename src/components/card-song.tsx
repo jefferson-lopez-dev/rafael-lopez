@@ -27,9 +27,10 @@ export function CardSong({ title, description, time, cover, slug }: Song) {
         <div>
           <span className="font-medium sm:font-bold sm:text-xl">{title}</span>
           <p className="text-sm max-w-[400px] text-neutral-200">
-            {description
-              .slice(0, 110)
-              .concat(description.length > 109 ? "..." : "")}
+            {description &&
+              description
+                .slice(0, 110)
+                .concat(description?.length > 109 ? "..." : "")}
           </p>
         </div>
         <span className="text-sm font-semibold">{time}</span>
