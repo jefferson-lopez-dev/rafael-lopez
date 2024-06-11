@@ -10,7 +10,7 @@ interface SongType {
   cover: string;
 }
 
-class Song {
+export class Song {
   title: string;
   author: string;
   album: string;

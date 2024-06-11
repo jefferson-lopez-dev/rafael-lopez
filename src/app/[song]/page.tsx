@@ -1,4 +1,4 @@
-import { Song, Songs } from "@/data"; // Importar Songs en lugar de Song
+import { Song, Songs } from "@/data";
 import { Player } from "./player";
 import { NoSong } from "./no-song";
 import type { Metadata } from "next";
@@ -7,8 +7,9 @@ interface Props {
   params: { song: string };
 }
 
-function findSongBySlug(slug: string): Song | undefined {
-  return Songs.find((song) => song.slug === slug);
+function findSongBySlug(slug: string): Song {
+  const songFind = Songs.find((song) => song.slug === slug);
+  return songFind!;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: song?.title || "Cancion no encontrada",
-    description: song?.description || "Esta cancion no ha sido encontrada",
+    description: song?.description ?? "Esta cancion no ha sido encontrada", // Use nullish coalescing to provide a fallback
     publisher: "Jefferson Lopez",
     category: "Musica",
     creator: "Jefferson",
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function SongReproducer(props: Props) {
   const { params } = props;
-  const decodedSlug = decodeURIComponent(params.song); // Decodificar el slug si es necesario
+  const decodedSlug = decodeURIComponent(params.song);
   const songData = findSongBySlug(decodedSlug);
   return songData ? <Player {...songData} /> : <NoSong />;
 }

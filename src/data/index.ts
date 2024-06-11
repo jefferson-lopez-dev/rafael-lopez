@@ -1,2 +1,1 @@
-export * from './songs';
-export * from './type';
+export * from "./songs";
