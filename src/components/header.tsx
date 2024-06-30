@@ -5,7 +5,7 @@ export function Header() {
         Rafael Lopez
       </h1>
       <span className="font-cursive bg-gradient-to-r from-transparent via-neutral-950 to-transparent pt-2 pb-1 w-[300px] justify-center flex items-center text-center w-fulls text-neutral-300 text-4xl">
-        El Rondoneño
+        {'"El Rondoneño"'}
       </span>
     </header>
   );

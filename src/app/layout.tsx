@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import "./globals.css";
 import { Header } from "@/components";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Rafael Lopez",
@@ -23,11 +23,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.className} bg-[url('/bg-ruido.png')] select-none`}
       >
-        <main className="px-5 min-h-[90dvh] gap-4 flex flex-col items-center select-none">
-          <Header />
-          <Navigation />
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>
