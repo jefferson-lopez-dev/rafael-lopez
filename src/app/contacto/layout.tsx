@@ -4,11 +4,27 @@ import { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Contacto - Rafael Lopez",
+  title: "Rafael Lopez",
   description: "Sigueme en mis redes sociales",
   creator: "Jefferson Lopez",
+  twitter: {
+    card: "player",
+    images: {
+      url: "/jose_rafael_lopez_1.jpg",
+      width: 1200,
+      height: 1200,
+      alt: "Rafael Lopez",
+    },
+  },
   openGraph: {
-    images: "/jose_rafael_lopez_1.jpg",
+    siteName: "Rafael Lopez",
+    type: "website",
+    images: {
+      url: "/jose_rafael_lopez_1.jpg",
+      width: 1200,
+      height: 1200,
+      alt: "Rafael Lopez",
+    },
   },
 };
 
