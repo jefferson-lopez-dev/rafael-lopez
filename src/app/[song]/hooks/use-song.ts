@@ -17,6 +17,14 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
   const [currentLyrics, setCurrentLyrics] = useState<string>(song.title);
   const [lyrics, setLyrics] = useState<{ time: number; text: string }[]>([]);
 
+  const seekAudio = (percentage: number) => {
+    if (refAudio.current) {
+      const audio = refAudio.current;
+      const seekTime = (percentage / 100) * audio.duration;
+      audio.currentTime = seekTime;
+    }
+  };
+
   const togglePlayPause = () => {
     if (refAudio.current) {
       if (isPlay) {
@@ -113,5 +121,6 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
     progress,
     currentLyrics,
     togglePlayPause,
+    seekAudio,
   };
 }

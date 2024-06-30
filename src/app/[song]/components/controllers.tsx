@@ -16,6 +16,7 @@ interface Props {
   isPlay: boolean;
   title: string;
   song: Song;
+  seekAudio: (percentage: number) => void;
 }
 
 export function Controllers(props: Props) {
@@ -27,6 +28,7 @@ export function Controllers(props: Props) {
     title,
     song,
     togglePlayPause,
+    seekAudio,
   } = props;
   const { push } = useRouter();
 
@@ -37,6 +39,11 @@ export function Controllers(props: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress]);
 
+  const handleSeek = (event: any) => {
+    const newProgress = parseFloat(event.target.value);
+    seekAudio(newProgress);
+  };
+
   return (
     <div className="w-full flex flex-col gap-3">
       <div className="flex flex-col w-full">
@@ -45,14 +52,15 @@ export function Controllers(props: Props) {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-3">
-          <div className="bg-neutral-500 rounded-full h-2 w-full dark:bg-white/30">
-            <div
-              className={clsx("bg-white h-2 rounded-full")}
-              style={{
-                width: `${progress + 1.8}%`,
-              }}
-            ></div>
-          </div>
+          <input
+            type="range"
+            value={progress}
+            min="0"
+            max="100"
+            onChange={handleSeek}
+            className="custom-range w-full h-[3px] bg-white bg-transparent cursor-pointer
+                   focus:outline-none focus:ring-white transition-colors duration-200 ease-in-out"
+          />
           <div className="flex justify-between text-xs text-neutral-300">
             <span>{currentTime}</span>
             <span>{duration}</span>

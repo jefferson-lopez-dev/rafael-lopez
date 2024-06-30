@@ -23,6 +23,7 @@ export function Player(song: Song) {
     progress,
     togglePlayPause,
     currentLyrics,
+    seekAudio,
   } = useSong({
     song: song,
     refAudio,
@@ -55,6 +56,7 @@ export function Player(song: Song) {
               isPlay={isPlay}
             />
             <Controllers
+              seekAudio={seekAudio}
               song={song}
               togglePlayPause={togglePlayPause}
               title={song.title}
