@@ -40,7 +40,8 @@ const SongsData: SongType[] = [
     description:
       "Una súplica de amor y perdón, entre despecho y chismes, donde el frío de la ausencia amenaza con destruir el hogar.",
     time: "4:07",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -48,7 +49,8 @@ const SongsData: SongType[] = [
     title: "Si un dia llegara a viejo",
     description: null,
     time: "3:51",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -56,7 +58,8 @@ const SongsData: SongType[] = [
     title: "La celosa",
     description: null,
     time: "4:09",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -64,7 +67,8 @@ const SongsData: SongType[] = [
     title: "Un trago para un despecho",
     description: null,
     time: "3:58",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -72,7 +76,8 @@ const SongsData: SongType[] = [
     title: "Los recuerdos de aquel sitio",
     description: null,
     time: "4:13",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -80,7 +85,8 @@ const SongsData: SongType[] = [
     title: "Otro ramalazo",
     description: null,
     time: "2:48",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -88,7 +94,8 @@ const SongsData: SongType[] = [
     title: "Ilusion pasajera",
     description: null,
     time: "3:51",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -96,7 +103,8 @@ const SongsData: SongType[] = [
     title: "Fragmentos de un amor",
     description: null,
     time: "4:34",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -104,7 +112,8 @@ const SongsData: SongType[] = [
     title: "Carlina",
     description: null,
     time: "3:49",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -112,7 +121,8 @@ const SongsData: SongType[] = [
     title: "Este es mi llano",
     description: null,
     time: "3:36",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -120,7 +130,8 @@ const SongsData: SongType[] = [
     title: "De aquel amor",
     description: null,
     time: "4:28",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
@@ -128,7 +139,8 @@ const SongsData: SongType[] = [
     title: "A mi llano con cariño",
     description: null,
     time: "3:41",
-    cover: "/cover-album-1.png",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
     album: "Otro Ramalazo",
     author: "Rafael Lopez",
   },
