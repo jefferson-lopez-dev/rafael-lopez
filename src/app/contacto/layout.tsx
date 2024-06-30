@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "player",
     images: {
-      url: "/jose_rafael_lopez_1.jpg",
+      url: "https://rafael-lopez-canciones.vercel.app/jose_rafael_lopez_1.jpg",
       width: 1200,
       height: 1200,
       alt: "Rafael Lopez",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Rafael Lopez",
     type: "website",
     images: {
-      url: "/jose_rafael_lopez_1.jpg",
+      url: "https://rafael-lopez-canciones.vercel.app/jose_rafael_lopez_1.jpg",
       width: 1200,
       height: 1200,
       alt: "Rafael Lopez",
