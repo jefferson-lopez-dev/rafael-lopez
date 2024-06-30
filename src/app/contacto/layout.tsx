@@ -10,9 +10,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "player",
     images: {
-      url: "https://rafael-lopez-canciones.vercel.app/jose_rafael_lopez_1.jpg",
-      width: 1200,
-      height: 1200,
+      url: "https://res.cloudinary.com/jeffersoncloud/image/upload/v1719782062/rafael-lopez/rysgaretilgjkuq1j3vi.jpg",
       alt: "Rafael Lopez",
     },
   },
@@ -20,9 +18,7 @@ export const metadata: Metadata = {
     siteName: "Rafael Lopez",
     type: "website",
     images: {
-      url: "https://rafael-lopez-canciones.vercel.app/jose_rafael_lopez_1.jpg",
-      width: 1200,
-      height: 1200,
+      url: "https://res.cloudinary.com/jeffersoncloud/image/upload/v1719782062/rafael-lopez/rysgaretilgjkuq1j3vi.jpg",
       alt: "Rafael Lopez",
     },
   },

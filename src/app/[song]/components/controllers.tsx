@@ -16,6 +16,7 @@ interface Props {
   isPlay: boolean;
   title: string;
   song: Song;
+  album: string;
   seekAudio: (percentage: number) => void;
 }
 
@@ -29,6 +30,7 @@ export function Controllers(props: Props) {
     song,
     togglePlayPause,
     seekAudio,
+    album,
   } = props;
   const { push } = useRouter();
 
@@ -48,7 +50,7 @@ export function Controllers(props: Props) {
     <div className="w-full flex flex-col gap-3">
       <div className="flex flex-col w-full">
         <span className="text-2xl font-semibold">{title}</span>
-        <span className="text-sm opacity-80">Rafael Lopez</span>
+        <span className="text-sm opacity-80">Rafael Lopez - {album}</span>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-3">

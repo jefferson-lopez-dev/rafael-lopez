@@ -56,6 +56,7 @@ export function Player(song: Song) {
               isPlay={isPlay}
             />
             <Controllers
+              album={song.album}
               seekAudio={seekAudio}
               song={song}
               togglePlayPause={togglePlayPause}
