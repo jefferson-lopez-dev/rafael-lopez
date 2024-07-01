@@ -1,5 +1,6 @@
 import { Header } from "@/components";
 import { Navigation } from "@/components/navigation";
+import { SongBackground } from "@/components/song-background";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 

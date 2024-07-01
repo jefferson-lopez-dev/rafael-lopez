@@ -19,7 +19,7 @@ export function Navigation() {
   const path = usePathname();
 
   return (
-    <nav className="w-full max-w-[700px] pb-2 px-5 rounded-md">
+    <nav className="w-full max-w-[700px] pb-2  rounded-md">
       <ul className="flex gap-4">
         {buttons.map(({ name, href }) => {
           const isActive = path === href;

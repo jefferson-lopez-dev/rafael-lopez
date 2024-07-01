@@ -1,5 +1,6 @@
 import { Header, SongsList } from "@/components";
 import { Navigation } from "@/components/navigation";
+import { SongBackground } from "@/components/song-background";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Header />
       <Navigation />
       <SongsList />
+      <SongBackground />
     </main>
   );
 }

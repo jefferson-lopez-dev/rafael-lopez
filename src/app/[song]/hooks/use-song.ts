@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Song } from "@/data";
+import { Song, Songs } from "@/data";
 import { useEffect, useState, type MutableRefObject } from "react";
 import { parseLRC } from "../utils";
 
@@ -11,17 +11,20 @@ interface Props {
 
 export function useSong({ song, refAudio, lrcUrl }: Props) {
   const [isPlay, setIsPlay] = useState(false);
-  const [duration, setDuration] = useState(song.time);
+  const [duration, setDuration] = useState(song.time ?? "0:00");
   const [currentTime, setCurrentTime] = useState("0:00");
   const [progress, setProgress] = useState(0);
   const [currentLyrics, setCurrentLyrics] = useState<string>(song.title);
   const [lyrics, setLyrics] = useState<{ time: number; text: string }[]>([]);
+  const [endAudio, setEndAudio] = useState(false);
 
   const seekAudio = (percentage: number) => {
     if (refAudio.current) {
       const audio = refAudio.current;
-      const seekTime = (percentage / 100) * audio.duration;
-      audio.currentTime = seekTime;
+      if (!isNaN(audio.duration)) {
+        const seekTime = (percentage / 100) * audio.duration;
+        audio.currentTime = seekTime;
+      }
     }
   };
 
@@ -58,35 +61,38 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
 
     const handleAudioEnd = () => {
       setIsPlay(false);
+      setEndAudio(true);
     };
 
     const handleTimeUpdate = () => {
       if (refAudio.current) {
         const audio = refAudio.current;
-        const currentMinutes = Math.floor(audio.currentTime / 60);
-        const currentSeconds = Math.floor(audio.currentTime % 60)
-          .toString()
-          .padStart(2, "0");
-        const totalMinutes = Math.floor(audio.duration / 60);
-        const totalSeconds = Math.floor(audio.duration % 60)
-          .toString()
-          .padStart(2, "0");
+        if (!isNaN(audio.currentTime) && !isNaN(audio.duration)) {
+          const currentMinutes = Math.floor(audio.currentTime / 60);
+          const currentSeconds = Math.floor(audio.currentTime % 60)
+            .toString()
+            .padStart(2, "0");
+          const totalMinutes = Math.floor(audio.duration / 60);
+          const totalSeconds = Math.floor(audio.duration % 60)
+            .toString()
+            .padStart(2, "0");
 
-        setCurrentTime(`${currentMinutes}:${currentSeconds}`);
-        setDuration(`${totalMinutes}:${totalSeconds}`);
-        setProgress((audio.currentTime / audio.duration) * 100);
+          setCurrentTime(`${currentMinutes}:${currentSeconds}`);
+          setDuration(`${totalMinutes}:${totalSeconds}`);
+          setProgress((audio.currentTime / audio.duration) * 100);
 
-        const currentLyric = lyrics.find(
-          (lyric) => lyric.time > audio.currentTime
-        );
-        const currentLyricIndex = currentLyric
-          ? lyrics.indexOf(currentLyric)
-          : -1;
-        const previousLyric =
-          currentLyricIndex > 0 ? lyrics[currentLyricIndex - 1] : null;
+          const currentLyric = lyrics.find(
+            (lyric) => lyric.time > audio.currentTime
+          );
+          const currentLyricIndex = currentLyric
+            ? lyrics.indexOf(currentLyric)
+            : -1;
+          const previousLyric =
+            currentLyricIndex > 0 ? lyrics[currentLyricIndex - 1] : null;
 
-        if (previousLyric) {
-          setCurrentLyrics(previousLyric.text);
+          if (previousLyric) {
+            setCurrentLyrics(previousLyric.text);
+          }
         }
       }
     };
@@ -114,6 +120,18 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
     };
   }, [isPlay, refAudio, lyrics]);
 
+  useEffect(() => {
+    setIsPlay(false);
+    setDuration(song.time ?? "0:00");
+    setCurrentTime("0:00");
+    setProgress(0);
+    setCurrentLyrics(song.title);
+    setLyrics([]);
+    if (lrcUrl) {
+      setLyrics(parseLRC(lrcUrl));
+    }
+  }, [song, refAudio]);
+
   return {
     isPlay,
     duration,
@@ -122,5 +140,7 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
     currentLyrics,
     togglePlayPause,
     seekAudio,
+    endAudio,
+    setEndAudio,
   };
 }
