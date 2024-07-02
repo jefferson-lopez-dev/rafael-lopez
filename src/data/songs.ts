@@ -42,7 +42,7 @@ const SongsData: SongType[] = [
     time: "4:07",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -51,7 +51,7 @@ const SongsData: SongType[] = [
     time: "3:51",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -60,7 +60,7 @@ const SongsData: SongType[] = [
     time: "4:09",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -69,7 +69,7 @@ const SongsData: SongType[] = [
     time: "3:58",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -78,16 +78,16 @@ const SongsData: SongType[] = [
     time: "4:13",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
-    title: "Otro ramalazo",
+    title: "Otro Ramalazo",
     description: null,
     time: "2:48",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -96,7 +96,7 @@ const SongsData: SongType[] = [
     time: "3:51",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -105,7 +105,7 @@ const SongsData: SongType[] = [
     time: "4:34",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -114,7 +114,7 @@ const SongsData: SongType[] = [
     time: "3:49",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -123,7 +123,7 @@ const SongsData: SongType[] = [
     time: "3:36",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -132,7 +132,7 @@ const SongsData: SongType[] = [
     time: "4:28",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
   {
@@ -141,7 +141,7 @@ const SongsData: SongType[] = [
     time: "3:41",
     cover:
       "https://res.cloudinary.com/jeffersoncloud/image/upload/v1717961397/rafael-lopez/cover-album-1.png",
-    album: "Otro Ramalazo",
+    album: "Un Trago Para Un Despecho",
     author: "Rafael Lopez",
   },
 ];
