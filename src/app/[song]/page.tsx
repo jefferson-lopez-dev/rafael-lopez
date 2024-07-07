@@ -2,14 +2,15 @@ import { Song, Songs } from "@/data";
 import { Player } from "./player";
 import { NoSong } from "./no-song";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 interface Props {
   params: { song: string };
 }
 
-function findSongBySlug(slug: string): Song {
+function findSongBySlug(slug: string): Song | undefined {
   const songFind = Songs.find((song) => song.slug === slug);
-  return songFind!;
+  return songFind;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -48,5 +49,9 @@ export default function SongReproducer(props: Props) {
   const decodedSlug = decodeURIComponent(params.song);
   const songData = findSongBySlug(decodedSlug);
 
-  return songData ? <Player {...songData} /> : <NoSong />;
+  if (!songData) {
+    return redirect("/");
+  }
+
+  return <Player {...songData} />;
 }
