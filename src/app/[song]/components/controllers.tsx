@@ -2,11 +2,20 @@
 
 import clsx from "clsx";
 import { Song } from "@/data";
-import { ListMusic, Pause, Play, Share2, SkipForward } from "lucide-react";
+import {
+  ListMusic,
+  Pause,
+  Play,
+  Share2,
+  SkipForward,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import { shareSong, nextSong, previousSong } from "../utils";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useMusica } from "@/context/musica";
 
 interface Props {
   togglePlayPause: () => void;
@@ -33,6 +42,7 @@ export function Controllers(props: Props) {
     album,
   } = props;
   const { push } = useRouter();
+  const { toggleMute, isMuted } = useMusica();
 
   useEffect(() => {
     if (progress >= 100) {
@@ -69,7 +79,13 @@ export function Controllers(props: Props) {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <ListMusic className="stroke-1 cursor-pointer" />
+          <span onClick={toggleMute} className="cursor-pointer">
+            {isMuted ? (
+              <VolumeX className="stroke-1" />
+            ) : (
+              <Volume2 className="stroke-1" />
+            )}
+          </span>
           <div className="flex items-center gap-5">
             <Link href={`${previousSong(song)}`}>
               <SkipForward className={clsx("fill-white rotate-180")} />
