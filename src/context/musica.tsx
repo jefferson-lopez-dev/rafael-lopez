@@ -25,6 +25,9 @@ interface Values {
   setCurrentMusica: Dispatch<SetStateAction<Song>>;
   currentMusica: Song;
   nextSong: () => void;
+  isMuted: boolean;
+  toggleMute: () => void;
+  currentTimeSeconds: number;
 }
 
 export const MusicaContext = createContext<Values | null>(null);
@@ -33,7 +36,6 @@ export const MusicaProvider = ({ children }: { children: ReactNode }) => {
   const defaultSong = Songs[0];
   const [currentMusica, setCurrentMusica] = useState<Song>(defaultSong);
   const refAudio = useRef<HTMLAudioElement | null>(null);
-  const [songBackground, setSongBackground] = useState(false);
   const {
     currentLyrics,
     currentTime,
@@ -44,6 +46,9 @@ export const MusicaProvider = ({ children }: { children: ReactNode }) => {
     togglePlayPause,
     endAudio,
     setEndAudio,
+    isMuted,
+    toggleMute,
+    currentTimeSeconds,
   } = useSong({ song: currentMusica, refAudio, lrcUrl: currentMusica.lrc });
 
   const nextSong = (): void => {
@@ -83,6 +88,9 @@ export const MusicaProvider = ({ children }: { children: ReactNode }) => {
         setCurrentMusica,
         currentMusica,
         nextSong,
+        isMuted,
+        toggleMute,
+        currentTimeSeconds,
       }}
     >
       <audio ref={refAudio}>
