@@ -39,7 +39,7 @@ export function Player(song: Song) {
 
   return (
     <>
-      <div className="flex lg:hidden flex-col w-full items-center">
+      <div className="flex min-[911px]:hidden flex-col w-full items-center">
         <div
           className={clsx(
             `rounded-md bg-gradient-to-b max-w-[500px] p-5 px-4 w-full flex justify-center`
@@ -76,7 +76,7 @@ export function Player(song: Song) {
           </div>
         </div>
       </div>
-      <div className="max-lg:hidden w-full flex justify-center">
+      <div className="max-[910px]:hidden w-full flex justify-center">
         <div className="flex gap-4 justify-between py-5 w-[900px]">
           <div className="w-full flex flex-col gap-4">
             <PlayerCard />

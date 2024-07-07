@@ -20,6 +20,7 @@ interface SongType {
   cover: string;
   credits: Credit[];
   platform_links: PlatformLinks;
+  color: "yellow" | "green" | "neutral";
 }
 
 export class Song {
@@ -34,6 +35,7 @@ export class Song {
   slug: string;
   credits: Credit[];
   platform_links: PlatformLinks;
+  color: "yellow" | "green" | "neutral";
 
   constructor({
     album,
@@ -44,6 +46,7 @@ export class Song {
     title,
     credits,
     platform_links,
+    color,
   }: SongType) {
     this.album = album;
     this.title = title;
@@ -56,6 +59,7 @@ export class Song {
     this.lrc = GetLrc(this.slug);
     this.credits = credits;
     this.platform_links = platform_links;
+    this.color = color;
   }
 }
 
@@ -84,6 +88,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=qC66pbrjqio",
     },
+    color: "yellow",
   },
   {
     title: "Si un dia llegara a viejo",
@@ -97,6 +102,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=cWwHCHnfbP8",
     },
+    color: "yellow",
   },
   {
     title: "La celosa",
@@ -110,6 +116,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=HJ_k-bBUwzs",
     },
+    color: "yellow",
   },
   {
     title: "Un trago para un despecho",
@@ -123,6 +130,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=D8nAbv_EGMU",
     },
+    color: "yellow",
   },
   {
     title: "Los recuerdos de aquel sitio",
@@ -136,6 +144,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=OF_ogdpBf0U",
     },
+    color: "yellow",
   },
   {
     title: "Otro Ramalazo",
@@ -149,6 +158,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=3bwUhq3m2uE",
     },
+    color: "yellow",
   },
   {
     title: "Ilusion pasajera",
@@ -162,6 +172,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=B9PX9mySk_E",
     },
+    color: "yellow",
   },
   {
     title: "Fragmentos de un amor",
@@ -175,6 +186,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=xJwAezD1GUk",
     },
+    color: "yellow",
   },
   {
     title: "Carlina",
@@ -188,6 +200,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=jVj8u-VSf18",
     },
+    color: "yellow",
   },
   {
     title: "Este es mi llano",
@@ -201,6 +214,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=D6RqWyXdSR0",
     },
+    color: "yellow",
   },
   {
     title: "De aquel amor",
@@ -214,6 +228,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=suQHsYMWO54",
     },
+    color: "yellow",
   },
   {
     title: "A mi llano con cariño",
@@ -227,6 +242,7 @@ const SongsData: SongType[] = [
     platform_links: {
       youtube: "https://www.youtube.com/watch?v=kPQiqbiFNKg",
     },
+    color: "yellow",
   },
 ];
 
