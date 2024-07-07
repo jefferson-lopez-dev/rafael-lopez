@@ -14,7 +14,7 @@ export function SongBackground() {
 
   return (
     <div className="sticky  cursor-pointer max-w-[700px] w-full bottom-0 pb-5">
-      <div className="w-full relative flex items-center h-[65px] border border-amber-500/30 bg-amber-800 rounded-lg">
+      <div className="w-full relative flex items-center h-[65px] bg-neutral-900 rounded-lg">
         <div
           onClick={() => {
             push(`${currentMusica.slug}`);
@@ -57,7 +57,7 @@ export function SongBackground() {
               >
                 <Image
                   className={clsx(
-                    "aspect-square w-[45px] transition-all brightness-50 contrast-100 z-0 rounded-md"
+                    "aspect-square shadow-2xl w-[45px] transition-all brightness-50 contrast-100 z-0 rounded-md"
                   )}
                   src={dics}
                   alt={currentMusica.slug}
