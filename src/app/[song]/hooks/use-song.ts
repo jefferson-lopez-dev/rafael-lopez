@@ -17,6 +17,8 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
   const [currentLyrics, setCurrentLyrics] = useState<string>(song.title);
   const [lyrics, setLyrics] = useState<{ time: number; text: string }[]>([]);
   const [endAudio, setEndAudio] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [currentTimeSeconds, setCurrentTimeSeconds] = useState(0);
 
   const seekAudio = (percentage: number) => {
     if (refAudio.current) {
@@ -25,6 +27,14 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
         const seekTime = (percentage / 100) * audio.duration;
         audio.currentTime = seekTime;
       }
+    }
+  };
+
+  const toggleMute = () => {
+    const newMuteState = !isMuted;
+    setIsMuted(newMuteState);
+    if (refAudio.current) {
+      refAudio.current.muted = newMuteState;
     }
   };
 
@@ -78,6 +88,7 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
             .padStart(2, "0");
 
           setCurrentTime(`${currentMinutes}:${currentSeconds}`);
+          setCurrentTimeSeconds(audio.currentTime);
           setDuration(`${totalMinutes}:${totalSeconds}`);
           setProgress((audio.currentTime / audio.duration) * 100);
 
@@ -142,5 +153,8 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
     seekAudio,
     endAudio,
     setEndAudio,
+    toggleMute,
+    isMuted,
+    currentTimeSeconds,
   };
 }
