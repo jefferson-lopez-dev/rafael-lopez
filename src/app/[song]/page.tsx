@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const song = Songs.find((song) => song.slug === params.song);
 
   return {
-    title: song?.title || "Cancion no encontrada",
+    title: `${song?.title} - Rafael Lopez` || "Cancion no encontrada",
     description: song?.description ?? "Esta cancion no ha sido encontrada", // Use nullish coalescing to provide a fallback
     publisher: "Jefferson Lopez",
     category: "Musica",
@@ -47,5 +47,6 @@ export default function SongReproducer(props: Props) {
   const { params } = props;
   const decodedSlug = decodeURIComponent(params.song);
   const songData = findSongBySlug(decodedSlug);
+
   return songData ? <Player {...songData} /> : <NoSong />;
 }
