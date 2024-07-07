@@ -1,19 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import { useMusica } from "@/context/musica";
 import { Song } from "@/data";
-import { useEffect, useRef } from "react";
+import clsx from "clsx";
+import { useEffect } from "react";
 import {
+  Controllers,
   Cover,
   Header,
-  Controllers,
   Lyrics,
   Singer,
   SocialNetworks,
 } from "./components";
-import { useSong } from "./hooks";
-import clsx from "clsx";
 import "./song.css";
-import { useMusica } from "@/context/musica";
+import { Cedits } from "./components/credits";
+import { PlayerCard } from "./components/player-card";
+import { SongsList } from "./components/songs-list";
 
 export function Player(song: Song) {
   const {
@@ -32,22 +35,17 @@ export function Player(song: Song) {
     if (currentMusica.slug !== song.slug) {
       setCurrentMusica(song);
     }
-  }, [currentMusica.slug, setCurrentMusica, song]);
+  }, [currentMusica, song]);
 
   return (
     <>
-      <div className="flex flex-col gap-10 items-center">
+      <div className="flex lg:hidden flex-col w-full items-center">
         <div
           className={clsx(
-            `rounded-md bg-gradient-to-b w-full flex justify-center from-transparent via-yellow-800/35 to-transparent`,
-            {
-              "via-yellow-900/50": !isPlay,
-              "via-yellow-900/35": isPlay,
-              "background-animate": isPlay,
-            }
+            `rounded-md bg-gradient-to-b max-w-[500px] p-5 px-4 w-full flex justify-center`
           )}
         >
-          <div className="flex flex-col max-w-[500px] h-full justify-between px-5 pt-5 items-center gap-24 w-full">
+          <div className="flex flex-col rounded-lg bg-neutral-900 justify-between p-5 items-center gap-4 w-full">
             <Header song={song} />
             <Cover
               togglePlayPause={() => {}}
@@ -68,11 +66,27 @@ export function Player(song: Song) {
             />
           </div>
         </div>
-        <div className="max-w-[500px] w-full flex flex-col gap-10 items-center">
-          <div className="w-full flex flex-col gap-5 px-5 pb-5">
+        <div className="w-full max-w-[500px] flex flex-col gap-10 items-center">
+          <div className="w-full flex flex-col gap-5 px-4 pb-5">
             <Lyrics lyric={currentLyrics!} />
             <Singer />
+            <Cedits />
             <SocialNetworks />
+            <SongsList />
+          </div>
+        </div>
+      </div>
+      <div className="max-lg:hidden w-full flex justify-center">
+        <div className="flex gap-4 justify-between py-5 w-[900px]">
+          <div className="w-full flex flex-col gap-4">
+            <PlayerCard />
+            <SocialNetworks />
+            <Cedits />
+            <Singer />
+          </div>
+          <div className="w-full flex flex-col gap-4">
+            <Lyrics lyric={currentLyrics!} />
+            <SongsList />
           </div>
         </div>
       </div>
