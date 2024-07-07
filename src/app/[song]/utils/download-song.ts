@@ -26,8 +26,8 @@ export const downloadSong = async (song: Song) => {
 
     writer
       .setFrame("TIT2", song.title) // Title
-      .setFrame("TPE1", ["Rafael Lopez"]) // Artist
-      .setFrame("TALB", "Otro ramalazo") // Album
+      .setFrame("TPE1", ["Rafael Lopez Osto"]) // Artist
+      .setFrame("TALB", song.album) // Album
       // @ts-ignore
       .setFrame("TYER", "2020") // Year
       // @ts-ignore
