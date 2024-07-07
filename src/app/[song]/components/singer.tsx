@@ -3,7 +3,7 @@ import about from "../assets/about.png";
 
 export function Singer() {
   return (
-    <div className="w-full flex-col relative flex items-center overflow-hidden justify-center  bg-neutral-900 rounded-lg">
+    <div className="w-full relative flex-col flex items-center overflow-hidden justify-center  bg-neutral-900 rounded-lg">
       <Image
         className="w-full rounded-tr-lg rounded-tl-lg h-[240px] object-cover"
         src={about}
