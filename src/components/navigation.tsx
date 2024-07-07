@@ -30,6 +30,7 @@ export function Navigation() {
               key={name}
               className={clsx("cursor-pointer transition-colors text-sm", {
                 "text-neutral-500": !isActive,
+                "underline underline-offset-8": isActive,
               })}
             >
               {name}
