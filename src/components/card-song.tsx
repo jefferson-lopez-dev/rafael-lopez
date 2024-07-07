@@ -17,8 +17,9 @@ export function CardSong(song: Song) {
       onClick={() => {
         if (currentMusica.slug === song.slug) {
           push(`${currentMusica.slug}`);
+        } else {
+          setCurrentMusica(song);
         }
-        setCurrentMusica(song);
       }}
       className={clsx(
         "flex px-1 py-1 w-full rounded-md bg-neutral-950 group transition-all max-sm:flex-col cursor-pointer justify-between gap-3",
