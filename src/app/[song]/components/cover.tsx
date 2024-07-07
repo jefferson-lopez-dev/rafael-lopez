@@ -15,14 +15,12 @@ export function Cover({ togglePlayPause, isPlay, slug, imagen }: Props) {
     <div
       className={`pt-3 w-full h-full py-10 pb-1 justify-center flex flex-col gap-2 px-1`}
     >
-      <Image
+      <img
         className="w-full h-full rounded-lg"
         src={imagen}
         alt={""}
         width={50}
         height={50}
-        quality={100}
-        priority
       />
     </div>
   );
