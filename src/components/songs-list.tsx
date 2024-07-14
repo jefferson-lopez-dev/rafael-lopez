@@ -46,7 +46,7 @@ export function SongsList() {
         <div className="flex w-full items-center justify-center min-h-[350px]">
           <div className="flex break-words w-full whitespace-normal text-wrap gap-2 flex-col text-sm text-neutral-400 items-center">
             <SearchX className="stroke-1" />
-            <span>
+            <span className="text-center">
               No se encontro una cancion de <strong>Rafael Lopez</strong> con el
               titulo
             </span>
