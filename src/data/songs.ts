@@ -74,7 +74,116 @@ const Credits_Un_Trago_Para_Un_Despecho: Credit[] = [
   { role: "Diseño", name: "Jefferson López" },
 ];
 
+const CreditsMiPrimerAmor: Credit[] = [
+  { role: "Arpa", name: "Alonso Castrillo" },
+  { role: "Cuatro", name: "Juan David Naranjo" },
+  { role: "Maracas", name: "Luis Ovidedo Gomez" },
+  { role: "Bajo", name: "Alonso Castrillo" },
+  { role: "Gravado en", name: "Pentagrama Studio" },
+  { role: "Voz", name: "AKC Studio Arauca" },
+  { role: "Técnico de sonido", name: "Alonso Castrillo" },
+  { role: "Diseño", name: "Edgar Aponte" },
+];
+
 const SongsData: SongType[] = [
+  {
+    title: "Mi Primer Amor",
+    description: null,
+    time: "4:09",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=M47Hex5FCDA",
+    },
+    color: "green",
+  },
+  {
+    title: "Travesuras",
+    description: null,
+    time: "5:31",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=CKPI914rZ2A",
+    },
+    color: "green",
+  },
+  {
+    title: "Vivencias De Un Coleador",
+    description: null,
+    time: "2:59",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=Q5xgugtBVBg",
+    },
+    color: "green",
+  },
+  {
+    title: "Sin Derechos",
+    description: null,
+    time: "4:22",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=aJqFOUfUO10",
+    },
+    color: "green",
+  },
+  {
+    title: "El Legado De Mi Llano",
+    description: null,
+    time: "3:38",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=8TcdKSyqK6c",
+    },
+    color: "green",
+  },
+  {
+    title: "Tu Decision",
+    description: null,
+    time: "3:26",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=fhT10L577mg",
+    },
+    color: "green",
+  },
+  {
+    title: "Mi Fracaso",
+    description: null,
+    time: "2:53",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720981663/rafael-lopez/bcnpdafgrxrviupjbysw.jpg",
+    album: "Mi Primer Amor",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=gk_wZXNoQCY",
+    },
+    color: "green",
+  },
   {
     title: "Patrona siempre es patrona",
     description:
