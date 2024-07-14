@@ -120,14 +120,11 @@ export function useSong({ song, refAudio, lrcUrl }: Props) {
       });
     }
 
-    window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       if (audioElement) {
         audioElement.removeEventListener("ended", handleAudioEnd);
         audioElement.removeEventListener("timeupdate", handleTimeUpdate);
       }
-      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isPlay, refAudio, lyrics]);
 
