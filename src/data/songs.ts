@@ -1,4 +1,4 @@
-import { audio as GetAudio, lrc as GetLrc } from "@/utils";
+import { Formats, audio as GetAudio, lrc as GetLrc } from "@/utils";
 import slug from "slug";
 
 interface Credit {
@@ -21,6 +21,7 @@ interface SongType {
   credits: Credit[];
   platform_links: PlatformLinks;
   color: "yellow" | "green" | "neutral";
+  format?: Formats;
 }
 
 export class Song {
@@ -47,6 +48,7 @@ export class Song {
     credits,
     platform_links,
     color,
+    format,
   }: SongType) {
     this.album = album;
     this.title = title;
@@ -55,7 +57,7 @@ export class Song {
     this.time = time;
     this.author = author;
     this.slug = slug(this.title);
-    this.audio = GetAudio(this.slug);
+    this.audio = GetAudio(this.slug, format);
     this.lrc = GetLrc(this.slug);
     this.credits = credits;
     this.platform_links = platform_links;
@@ -85,7 +87,100 @@ const CreditsMiPrimerAmor: Credit[] = [
   { role: "Diseño", name: "Edgar Aponte" },
 ];
 
-const SongsData: SongType[] = [
+const SongsCorazonDeMarcapasos: SongType[] = [
+  {
+    title: "Corazon De Marcapasos",
+    description: null,
+    time: "4:06",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=YxGGscNMNbA",
+    },
+    color: "green",
+    format: "m4a",
+  },
+  {
+    title: "Amigas Amante Y Mosas",
+    description: null,
+    time: "5:48",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=kvdBAHgB5cc",
+    },
+    color: "green",
+    format: "m4a",
+  },
+  {
+    title: "Ayer Joven Hoy Anciano",
+    description: null,
+    time: "4:10",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=uevwUwMzoXc",
+    },
+    color: "green",
+    format: "m4a",
+  },
+  {
+    title: "Demostrando Con Hechos",
+    description: null,
+    time: "4:09",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=b-zCKusAQ_k",
+    },
+    color: "green",
+    format: "m4a",
+  },
+  {
+    title: "Tomando Para Olvidar",
+    description: null,
+    time: "3:42",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=dfKoiZ2bzkQ",
+    },
+    color: "green",
+    format: "m4a",
+  },
+  {
+    title: "Distintos Destinos",
+    description: null,
+    time: "3:22",
+    cover:
+      "https://res.cloudinary.com/jeffersoncloud/image/upload/v1720983166/rafael-lopez/bn7pbafhdbjta1lahyqq.jpg",
+    album: "Corazon De Marcapasos",
+    author: "Rafael Lopez",
+    credits: CreditsMiPrimerAmor,
+    platform_links: {
+      youtube: "https://www.youtube.com/watch?v=gVKf1ZZpNe4",
+    },
+    color: "green",
+    format: "m4a",
+  },
+];
+
+const SongsMiPrimerAmor: SongType[] = [
   {
     title: "Mi Primer Amor",
     description: null,
@@ -99,6 +194,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=M47Hex5FCDA",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "Travesuras",
@@ -113,6 +209,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=CKPI914rZ2A",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "Vivencias De Un Coleador",
@@ -127,6 +224,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=Q5xgugtBVBg",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "Sin Derechos",
@@ -141,6 +239,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=aJqFOUfUO10",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "El Legado De Mi Llano",
@@ -155,6 +254,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=8TcdKSyqK6c",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "Tu Decision",
@@ -169,6 +269,7 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=fhT10L577mg",
     },
     color: "green",
+    format: "m4a",
   },
   {
     title: "Mi Fracaso",
@@ -183,7 +284,11 @@ const SongsData: SongType[] = [
       youtube: "https://www.youtube.com/watch?v=gk_wZXNoQCY",
     },
     color: "green",
+    format: "m4a",
   },
+];
+
+const SongsUnTragoParaUnDespecho: SongType[] = [
   {
     title: "Patrona siempre es patrona",
     description:
@@ -353,6 +458,12 @@ const SongsData: SongType[] = [
     },
     color: "yellow",
   },
+];
+
+const SongsData: SongType[] = [
+  ...SongsCorazonDeMarcapasos,
+  ...SongsMiPrimerAmor,
+  ...SongsUnTragoParaUnDespecho,
 ];
 
 export const Songs: Song[] = SongsData.map((songData) => new Song(songData));
