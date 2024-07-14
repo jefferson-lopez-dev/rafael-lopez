@@ -10,10 +10,12 @@ export default function page() {
       <div>
         <Image
           className="rounded-full aspect-square object-cover object-left-top"
-          src={"/jose_rafael_lopez_1.jpg"}
+          src={
+            "https://res.cloudinary.com/jeffersoncloud/image/upload/v1719782062/rafael-lopez/rysgaretilgjkuq1j3vi.jpg"
+          }
           width={150}
           height={150}
-          alt=""
+          alt="Foto De Contacto"
           quality={100}
           priority
         />

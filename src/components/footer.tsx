@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { Facebook, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,7 +11,7 @@ export function Footer() {
             alt="Logo del Artista"
             className="w-16 h-16 max-md:mx-auto mb-2 md:mb-0 md:mr-4 rounded-full"
           />
-          <p className="text-sm flex items-center justify-center md:justify-start">
+          <p className="text-sm flex whitespace-nowrap max-sm:flex-col items-center justify-center md:justify-start">
             Sígueme en:
             <span className="ml-2">
               <a
@@ -21,7 +20,7 @@ export function Footer() {
                 href="https://www.youtube.com/@joserafaellopezosto8627"
                 className="text-blue-500 hover:underline flex items-center"
               >
-                <Youtube className="w-4 h-4 mr-1" /> El Rondoneño
+                El Rondoneño
               </a>
             </span>
             <span className="ml-4">
@@ -31,7 +30,7 @@ export function Footer() {
                 href="https://www.facebook.com/profile.php?id=100063642931231&ref=bookmarks&paipv=0&eav=Afbjq1kp2k5fzYRMLwLGHEB2KLEFo-cEyEAaBjKjz1bey66a3RvY6Q_JyGWQJaXLFHM"
                 className="text-blue-500 hover:underline flex items-center"
               >
-                <Facebook className="w-4 h-4 mr-1" /> Joropo Llano Y Leyenda
+                Joropo Llano Y Leyenda
               </a>
             </span>
             {/* Agrega más redes sociales según sea necesario */}
